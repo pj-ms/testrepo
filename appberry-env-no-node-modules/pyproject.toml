@@ -1,0 +1,18 @@
+[project]
+name = "appberry-env"
+version = "0.1.0"
+dependencies = ["json5", "pydantic"]
+
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.oaipkg]
+monorepo-dependencies = []
+compliance-policies = ["b2b-products","research-core-compliant"]
+dependency-check-ignore = ["turn_completer_service"]
+
+[tool.buildkite]
+name = "appberry-env"
+pipeline = "buildkite/pipeline.yml"
+owner = "@openai/appberry-research"
